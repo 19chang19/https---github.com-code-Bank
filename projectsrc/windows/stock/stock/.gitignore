@@ -1,0 +1,6 @@
+*.txt
+*.xls
+corpus/
+pos/
+neg/
+*.png
