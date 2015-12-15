@@ -1,6 +1,6 @@
 # -*- coding: utf-8-*-
 
-#抓取网易的股票信息，股票名字、代码、所属行业
+#抓取网易的股票信息，股票名字、代码、所属行业，写到excel里去了
 import re,urllib2
 import xlwt
 from bs4 import BeautifulSoup

@@ -1,5 +1,5 @@
 #coding: utf-8
-
+#要依赖id.txt，会生成corpus目录，industry2015-11-30.txt，score2015-11-30.txt，stock.xls，会启动浏览器
 from selenium import webdriver
 
 import time
@@ -36,7 +36,7 @@ description_id = 1
 #windows
 options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ["ignore-certificate-errors"])
-browser = webdriver.Chrome(executable_path='C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chromedriver.exe',port=0,chrome_options=options)
+browser = webdriver.Chrome(executable_path=os.getcwd()+'\chromedriver.exe',port=0,chrome_options=options)
 #mac
 #browser = webdriver.Chrome(executable_path='/Users/daitechang/Documents/stock/chromedriver')
 
@@ -168,7 +168,7 @@ def pawner(day, t2):
 	today   = date.today()
 	delta = -1
 
-	os.mkdir('corpus')
+	#os.mkdir('corpus')
 	while 1:
 		f = open('id.txt', 'r')
 		delta += 1
@@ -276,7 +276,10 @@ if __name__ == "__main__":
 	#print 1
 ##	timer = threading.Timer(7200, pawner)
 #	timer.start()
-	t = int(sys.argv[1])
-	t2 = int(sys.argv[2])
+	#t = int(sys.argv[1])
+	#t2 = int(sys.argv[2])
+
+	t = int('15')
+	t2 = int('1')
 	#get_id()
 	pawner(t, t2)

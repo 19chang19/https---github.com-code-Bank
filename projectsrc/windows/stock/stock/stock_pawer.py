@@ -1,5 +1,6 @@
 #coding: utf-8
-
+#生成最活跃的用户id.txt ? ，再生成产业板块类别活跃排名 industry2015-11-30.txt,活跃排名score2015-11-30.txt,会用到excel文件
+#并生成corpus目录
 from selenium import webdriver
 
 import time
@@ -35,7 +36,7 @@ import time
 description_id = 1
 options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ["ignore-certificate-errors"])
-browser = webdriver.Chrome(executable_path='C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chromedriver.exe',port=0,chrome_options=options)
+browser = webdriver.Chrome(executable_path=os.getcwd()+'\chromedriver.exe',port=0,chrome_options=options)
 def start(url, d, today, vstock):
    # try:
     global description_id
@@ -298,7 +299,10 @@ if __name__ == "__main__":
 	#print 1
 ##	timer = threading.Timer(7200, pawner)
 #	timer.start()
-	t = int(sys.argv[1])
-	t2 = int(sys.argv[2])
+	#t = int(sys.argv[1])
+	#t2 = int(sys.argv[2])
 	get_id()
+
+	t = int('15')
+	t2 = int('1')
 	pawner(t, t2)
