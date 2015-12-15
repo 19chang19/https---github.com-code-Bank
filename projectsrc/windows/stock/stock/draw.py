@@ -27,7 +27,8 @@ for fname in file_names:
 			break
 		array = line[:-1].split('%')
 		a = array[0].decode('utf-8')
-		#print array[2]
+		print "array[2]"
+		print a	#array[2]		#取到是%号后的1
 
 		#if stock_t.has_key(a):
 		#	stock_t[a].append(int(array[2]))
@@ -41,7 +42,9 @@ for fname in file_names:
 			stock[key].append(stock_t[key]/float(summ))
 		else:
 			stock[key] = [stock_t[key]/float(summ)]		
-	#print stock[u'中信证券']
+	print "stock[key]"
+	print stock[key]	#[0.1111111111111111]
+	print key			#保利地产
 
 #url = 'http://quotes.money.163.com/trade/lsjysj_'+ '601800'+'.html?year=2014&season=4'
 url = 'http://quotes.money.163.com/trade/lsjysj_'+ '600030'+'.html?year=2014&season=4'
@@ -76,7 +79,7 @@ req = urllib2.Request( url, headers = headers)
 try:
     content = urllib2.urlopen(req).read()
 except Exception,e:
-    print e
+    print "Exception:"+e
     #return 0
 soup = BeautifulSoup(content)
 xlabel = xlabel[5:-4]
@@ -102,18 +105,21 @@ for fname in file_names:
 		y2.append(float(web[nm.decode('utf-8')]))
 	else:
 		y2.append(0)
+
+print "y2"
 print y2
 fig = plt.figure()
 f = fig.add_subplot(111)
 f2 = fig.add_subplot(111)
 #ax = plt.gca()
 #ax.xaxis.set_major_locator( MultipleLocator(1) )
-#for key in stock:
-key = u'中信证券'
-#key = u'中国交建'
-x = range(len(stock[key]))
-print stock[key]
-y = stock[key]
+for key in stock:
+	#key = u'中信证券'
+	#key = u'中国交建'
+	x = range(len(stock[key]))
+	print "y"
+	print stock[key]
+	y = stock[key]
 
 yy1 = []
 yy2 = []
@@ -122,6 +128,7 @@ for i in range(len(stock[key])):
 		yy1.append(y[i])
 		yy2.append(y2[i])
 
+print "yy2"
 print yy2
 
 #normal

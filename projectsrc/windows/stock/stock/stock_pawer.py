@@ -303,6 +303,6 @@ if __name__ == "__main__":
 	#t2 = int(sys.argv[2])
 	get_id()
 
-	t = int('15')
-	t2 = int('1')
+	t = int('1')
+	t2 = int('5')
 	pawner(t, t2)
