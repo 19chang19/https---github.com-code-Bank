@@ -1,0 +1,2 @@
+stock.indust.txt 是行业，行业与行业之间用空行隔开，第一行就是行业类型
+stock.capital.txt 是主要资产？
